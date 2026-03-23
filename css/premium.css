@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap');
+
+:root {
+    --bg-dark: #0a0a0c;
+    --bg-card: rgba(20, 20, 25, 0.7);
+    --primary-gold: #ffbd39;
+    --primary-hover: #e5a933;
+    --text-main: #e2e2e2;
+    --text-muted: #a0a0a0;
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-gold);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-hover);
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+/* Glassmorphism Classes */
+.glass-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 189, 57, 0.3);
+}
+
+/* Premium Button */
+.btn-premium {
+    background: var(--primary-gold);
+    color: #000 !important;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    border: none;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.btn-premium:hover {
+    background: var(--primary-hover);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 189, 57, 0.4);
+}
+
+/* Section Transitions */
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    position: relative;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--primary-gold);
+}
+
+/* Custom Hero Background */
+.hero-mesh {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 30%, rgba(255, 189, 57, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(255, 189, 57, 0.05) 0%, transparent 40%);
+    z-index: -1;
+}
+
+/* Typing Animation Refined */
+#typing-animation {
+    color: var(--primary-gold) !important;
+    font-size: 1.5rem;
+    font-family: var(--font-body);
+}
+
+/* Image Hover Refined */
+.zoom-effect {
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.zoom-effect:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+/* Reveal on Scroll */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Tech Badges */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.tech-badge {
+    background: rgba(255, 189, 57, 0.1);
+    color: var(--primary-gold);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 189, 57, 0.2);
+}
+
+/* Timeline Enhancement */
+.resume-wrap {
+    position: relative;
+    padding-left: 20px;
+}
+
+.resume-wrap::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--primary-gold);
+    box-shadow: 0 0 10px rgba(255, 189, 57, 0.5);
+}

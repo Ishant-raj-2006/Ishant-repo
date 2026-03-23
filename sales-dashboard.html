@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Dashboard | Ishant Raj</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/premium.css">
+    <style>
+        .project-hero { padding: 150px 0 100px; background: linear-gradient(to bottom, rgba(10, 10, 12, 0.8), var(--bg-dark)), url('images/proj_3.jpg'); background-size: cover; background-position: center; text-align: center; }
+        .content-section { padding: 80px 0; }
+        .back-btn { position: fixed; top: 30px; left: 30px; z-index: 1000; }
+        .dashboard-img { width: 100%; border-radius: 20px; border: 1px solid var(--glass-border); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="btn btn-premium back-btn">← Back</a>
+    <header class="project-hero">
+        <div class="container reveal active">
+            <h1 class="display-3" style="color: var(--primary-gold);">Interactive Sales Dashboard</h1>
+            <p class="lead text-white">Visual Intelligence using Power BI</p>
+            <div class="tech-stack justify-content-center">
+                <span class="tech-badge">Power BI</span>
+                <span class="tech-badge">DAX</span>
+                <span class="tech-badge">Data Modeling</span>
+            </div>
+        </div>
+    </header>
+    <section class="content-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-7 reveal">
+                    <h2>Live Dashboard Insight</h2>
+                    <p>Designed a comprehensive Power BI dashboard for 'Madhav Store' to track real-time sales performance. The dashboard enables stakeholders to drill down into regional data, payment method preferences, and monthly growth trends.</p>
+                    <img src="images/proj_3.jpg" class="dashboard-img mt-4" alt="Power BI Dashboard">
+                </div>
+                <div class="col-md-5">
+                    <div class="glass-card reveal">
+                        <h4 style="color: var(--primary-gold);">Dashboard Features</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">📊 **Dynamic Slicers**: Filter by Month, State, and Category.</li>
+                            <li class="mb-3">📈 **KPI Tracking**: Real-time monitoring of Profit, Quantity, and AOV.</li>
+                            <li class="mb-3">🗺️ **Map Visuals**: Geographic distribution of sales volume.</li>
+                            <li class="mb-3">💳 **Payment Analysis**: Trend analysis for COD, UPI, and Credit Cards.</li>
+                        </ul>
+                        <a href="https://github.com/Ishant-raj-2006/Madhav_Store_Analysis_PowerBI" class="btn btn-premium btn-block mt-4">View Dashboard Files</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                if (reveals[i].getBoundingClientRect().top < windowHeight - 150) reveals[i].classList.add("active");
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
+</body>
+</html>
