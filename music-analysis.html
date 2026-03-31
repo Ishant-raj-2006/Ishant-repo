@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Store Data Analysis | Ishant Raj</title>
+    <title>Location Finder | Ishant Raj</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/premium.css">
+    <!-- Leaflet library CSS for map styling -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
         .project-hero {
             padding: 150px 0 100px;
@@ -15,124 +17,188 @@
             background-position: center;
             text-align: center;
         }
-        .content-section {
-            padding: 80px 0;
+        .content-section { padding: 80px 0; }
+        .back-btn { position: fixed; top: 30px; left: 30px; z-index: 1000; }
+        
+        /* Location Finder Specific Styles */
+        .finder-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
         }
-        .back-btn {
-            position: fixed;
-            top: 30px;
-            left: 30px;
-            z-index: 1000;
+        #pincode {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--primary-gold);
+            color: white;
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
         }
-        .code-block {
-            background: #1e1e1e;
-            color: #dcdcdc;
+        #pincode:focus {
+            outline: none;
+            box-shadow: 0 0 15px rgba(255, 189, 57, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        #results {
+            margin-top: 30px;
+        }
+        #address {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            color: #ccc;
             padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border-left: 4px solid var(--primary-gold);
+            text-align: left;
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .error-msg {
+            color: #ff4d4d;
+            background: rgba(255, 77, 77, 0.1);
+            padding: 15px;
             border-radius: 10px;
-            font-family: 'Courier New', Courier, monospace;
-            margin: 20px 0;
-            border-left: 4px solid var(--primary-gold);
-            overflow-x: auto;
-        }
-        .insight-card {
-            border-left: 4px solid var(--primary-gold);
-            background: rgba(255, 189, 57, 0.05);
-            padding: 20px;
-            margin: 10px 0;
-            border-radius: 0 10px 10px 0;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <a href="index.html" class="btn btn-premium back-btn">← Back to Portfolio</a>
-
+    <a href="index.html" class="btn btn-premium back-btn">← Back</a>
+    
     <header class="project-hero">
         <div class="container reveal active">
-            <h1 class="display-3" style="color: var(--primary-gold);">Music Store Data Analysis</h1>
-            <p class="lead text-white">Uncovering growth opportunities through Advanced SQL Querying</p>
+            <h1 class="display-3" style="color: var(--primary-gold);">Location Finder</h1>
+            <p class="lead text-white">Instant PIN Code Location Lookup Tool</p>
             <div class="tech-stack justify-content-center">
-                <span class="tech-badge">SQL</span>
-                <span class="tech-badge">PostgreSQL</span>
-                <span class="tech-badge">Business Intelligence</span>
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">API Integration</span>
+                <span class="tech-badge">Leaflet.js</span>
+                <span class="tech-badge">OpenStreetMap</span>
             </div>
         </div>
     </header>
 
-    <section class="content-section">
+    <section class="content-section" id="test">
         <div class="container">
-            <div class="row">
-                <div class="col-md-8 reveal">
-                    <h2 class="mb-4">Project Overview</h2>
-                    <p>This project involved analyzing a large dataset from a digital music store to identify customer behavior patterns, popular genres, and regional sales performance. The goal was to provide actionable business insights for stock optimization and marketing strategy.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-10 reveal">
+                    <h2 class="text-center">Live Project</h2>
+                    <p class="text-center mb-5">Try entering any Indian PIN code below to see the location details and an interactive map.</p>
                     
-                    <h3 class="mt-5">Key Objectives</h3>
-                    <ul class="list-unstyled">
-                        <li class="mb-2">✅ Identify the top-selling genres in each country.</li>
-                        <li class="mb-2">✅ Determine the most valuable customers based on lifetime purchase value.</li>
-                        <li class="mb-2">✅ Analyze the correlation between playlist size and track popularity.</li>
-                    </ul>
-
-                    <h3 class="mt-5">Advanced Analysis Snippet</h3>
-                    <p>Using Common Table Expressions (CTEs) and Window Functions to find the most popular music genre by country:</p>
-                    <div class="code-block">
-WITH popular_genre AS (
-    SELECT COUNT(invoice_line.quantity) AS purchase_count, customer.country, genre.name, genre.genre_id, 
-	ROW_NUMBER() OVER(PARTITION BY customer.country ORDER BY COUNT(invoice_line.quantity) DESC) AS RowNo 
-    FROM invoice_line 
-	JOIN invoice ON invoice.invoice_id = invoice_line.invoice_id
-	JOIN customer ON customer.customer_id = invoice.customer_id
-	JOIN track ON track.track_id = invoice_line.track_id
-	JOIN genre ON genre.genre_id = track.genre_id
-	GROUP BY 2,3,4
-	ORDER BY 2 ASC, 1 DESC
-)
-SELECT * FROM popular_genre WHERE RowNo <= 1;
+                    <div class="finder-container">
+                        <input type="text" id="pincode" placeholder="Enter 6-digit pin code" maxlength="6">
+                        <div id="results"></div>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-md-4">
+            <div class="row mt-5" id="about">
+                <div class="col-md-7 reveal">
+                    <h2>Project Overview</h2>
+                    <p>This application allows users to find geographical locations in India by entering a 6-digit PIN code. It fetches real-time data using the Nominatim OpenStreetMap API and visualizes it using Leaflet.js.</p>
+                    <div class="glass-card mt-4">
+                        <h4 style="color: var(--primary-gold);">Core Functionality</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">📍 Dynamic PIN code validation</li>
+                            <li class="mb-2">🗺️ Interactive Map with precise markers</li>
+                            <li class="mb-2">🌐 Real-time address resolution via API</li>
+                            <li class="mb-2">⚡ Minimalistic and fast user experience</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-5">
                     <div class="glass-card reveal">
-                        <h4 style="color: var(--primary-gold);">Project Metrics</h4>
-                        <div class="insight-card">
-                            <strong>10K+</strong>
-                            <p class="mb-0">Rows of transaction data analyzed.</p>
-                        </div>
-                        <div class="insight-card">
-                            <strong>20+</strong>
-                            <p class="mb-0">Complex SQL queries developed.</p>
-                        </div>
-                        <div class="insight-card">
-                            <strong>$50K+</strong>
-                            <p class="mb-0">Estimated potential revenue optimization identified.</p>
-                        </div>
-                        <a href="https://github.com/Ishant-raj-2006/SQL_Music_Store_Analysis" class="btn btn-premium btn-block mt-4">View Full Code on GitHub</a>
+                        <h4 style="color: var(--primary-gold);">Dev Notes</h4>
+                        <p>Built as a lightweight utility tool. The logic focuses on asynchronous data handling and clean UI updates without page reloads. Perfect for logistics or user-address verification scenarios.</p>
+                        <a href="https://github.com/Ishant-raj-2006" class="btn btn-premium btn-block mt-4">View Source Code</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="ftco-footer ftco-section" style="padding: 50px 0;">
-        <div class="container text-center text-muted">
-            <p>&copy; 2026 Ishant Raj | Premium Portfolio Case Study</p>
-        </div>
-    </footer>
-
+    <!-- Leaflet library JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
     <script>
-        // Copy-paste scroll reveal from index for consistency
+        // Scroll Reveal Logic
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
+                if (reveals[i].getBoundingClientRect().top < windowHeight - 150) reveals[i].classList.add("active");
             }
         }
         window.addEventListener("scroll", reveal);
         reveal();
+
+        // Location Finder Logic
+        document.getElementById('pincode').addEventListener('input', function() {
+            const pincode = this.value;
+            if (pincode.length === 6 && /^\d{6}$/.test(pincode)) {
+                fetchLocation(pincode);
+            } else {
+                clearResults();
+            }
+        });
+
+        function fetchLocation(pincode) {
+            const url = `https://nominatim.openstreetmap.org/search?format=json&q=${pincode},India&limit=1`;
+            
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.length > 0) {
+                        const place = data[0];
+                        const address = place.display_name;
+                        const lat = parseFloat(place.lat);
+                        const lon = parseFloat(place.lon);
+                        displayResults(address, lat, lon);
+                    } else {
+                        displayError('Location not found for this pin code.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching location:', error);
+                    displayError('Error fetching location. Please try again.');
+                });
+        }
+
+        function displayResults(address, lat, lon) {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `
+                <div id="address">${address}</div>
+                <div id="map"></div>
+            `;
+            
+            // Wait for DOM to update
+            const map = L.map('map').setView([lat, lon], 13);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+            
+            L.marker([lat, lon]).addTo(map);
+        }
+
+        function displayError(message) {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `<div class="error-msg">${message}</div>`;
+        }
+
+        function clearResults() {
+            document.getElementById('results').innerHTML = '';
+        }
     </script>
 </body>
 </html>
