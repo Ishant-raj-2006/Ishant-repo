@@ -1,653 +1,447 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Ishant Raj Portfolio</title>
+<head>
+    <title>Ishant Raj | Engineering Portfolio</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-
-    <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/premium.css">
-
-
-
-<style>
-
-/*======================================
-//--//-->   ABOUT
-======================================*/
-
-.about-mf .box-shadow-full {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
-.about-mf .about-img {
-  margin-bottom: 2rem;
-}
-
-.about-mf .about-img img {
-  margin-left: 10px;
-}
-
-
-.skill-mf .progress {
-  /* background-color: #cde1f8; */
-  margin: .5rem 0 1.2rem 0;
-  border-radius: 0;
-  height: .7rem;
-}
-
-.skill-mf .progress .progress-bar {
-  height: .7rem;
-  background-color: #ffbd39;
-}
-
-
-/* Animation styles */
-#typing-animation {
-  position: relative;
-  font-size: 30px;
-  font-weight: bold;
-  color: rgb(255, 255, 255);
-  overflow: hidden;
-  white-space: nowrap;
-  animation: typing 3s steps(20, end) infinite;
-}
-
-#typing-animation:before {
-  content: "";
-  /* position: absolute; */
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: #ccc;
-  animation: typing-cursor 0.5s ease-in-out infinite;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes typing-cursor {
-  from {
-    width: 5px;
-  }
-  to {
-    width: 0;
-  }
-}
-
-
-/* project image zoom effect */
-
-.zoom-effect {
-  overflow: hidden;
-  transition: transform 0.3s ease-out;
-}
-
-.zoom-effect:hover {
-  transform: scale(1.1);
-}
-
-
-</style>
-
-
-  </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-	  
-	  
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Ishant raj</a>
-	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
-
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav nav ml-auto">
-	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-	          <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
-	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
-	  <section id="home-section" class="hero">
-		  <div class="home-slider  owl-carousel">
-	       <div class="slider-item ">
-	      	<div class="overlay"></div>
-	         <div class="container">
-	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/bg_1.png);">
-	          	 <div class="overlay"></div>
-	          	</div>
-		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-		          	<div class="text">
-		          		<span class="subheading">Hello!</span>
-			            <h1 class="mb-4 mt-3">I'm <span>Ishant Raj</span></h1>
-
-						<!-- Element to contain animated typing -->
-						<span id="typing-animation"></span>
-
-						<script>
-
-						// Initialize the typing animation
-						const typingAnimationElement = document.getElementById('typing-animation');
-
-						// Create an array of typing text
-						const typingTexts = [
-						'Software Engineer  ',
-						'Full Stack Developer  ',
-						'Tech Enthusiast    ',
-						];
-
-						// Create a function to display the typing animation for a given text
-						function playTypingAnimation(text) {
-						// Loop through each character and add it to the element
-						for (let i = 0; i < text.length; i++) {
-							setTimeout(() => {
-							typingAnimationElement.textContent += text[i];
-							}, i * 200); // Increase the delay to slow down the typing animation
-						}
-
-						// Once the animation is complete, reset the text and start over
-						setTimeout(() => {
-							typingAnimationElement.textContent = '';
-							playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-						}, text.length * 200);
-						}
-
-						// Start the typing animation loop
-						playTypingAnimation(typingTexts[0]);
-
-						</script>
-
-						<br>
-						<br>
-			            <h2>Aspiring Software Engineer specialized in <strong>Computer Science & Engineering</strong>. Committed to building robust, data-centric applications that solve real-world problems.</h2>
-						<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
-						<!-- <br> -->
-			            <p><a href="https://www.linkedin.com/in/ishant-raj-b82901219?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="btn btn-premium py-3 px-4">LinkedIn</a> 
-							<a href="https://github.com/Ishant-raj-2006" class="btn btn-white btn-outline-white py-3 px-4">GitHub </a></p>
-		            </div>
-		          </div>
-	        	</div>
-	        </div>
-	      </div>
-		</div>
-    </section>
-
-
-
-    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-    	<div class="container">
-			<div class="row">
-				<div class="row d-flex align-items-stretch">
-				<!-- <div class="row d-flex"> -->
-					<div class="col-md-6 col-lg-5 d-flex">
-						<div class="img-about img d-flex align-items-stretch glass-card p-4">
-							<div class="overlay-none">
-								<div class="row">
-									<div class="col-sm-6 col-md-5">
-									  <div class="about-img">
-										<img src="images/about-me.png" class="img-fluid rounded b-shadow-a" alt="Ishant Raj">
-									  </div>
-									</div>
-									<!-- Details next to profile image -->
-									<div class="col-sm-6 col-md-7">
-									  <div class="about-info">
-										<p><span class="title-s" style="color:var(--primary-gold)">Name: </span> <span>Ishant Raj</span></p>
-										<p><span class="title-s" style="color:var(--primary-gold)">Job Role: </span> <span>Software Engineer</span></p>
-										<p><span class="title-s" style="color:var(--primary-gold)">Experience: </span> <span>Fresher</span></p>
-										<p><span class="title-s" style="color:var(--primary-gold)">Address: </span> <span>Bihar, India</span></p>
-									  </div>
-									</div>
-								  </div>
-
-								<div class="skill-mf mt-4">
-									<p class="title-s" style="color:var(--primary-gold); font-size: 1.2rem; margin-bottom: 20px;">Technical Skills</p>
-									<span>C Programming</span> <span class="pull-right">95%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 95%; background-color: var(--primary-gold);" aria-valuenow="95" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>Web Development (HTML/CSS/JS)</span> <span class="pull-right">75%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 75%; background-color: var(--primary-gold);" aria-valuenow="75" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>Java & Python</span> <span class="pull-right">60%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 60%; background-color: var(--primary-gold);" aria-valuenow="60" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>Data Analysis</span> <span class="pull-right">50%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 50%; background-color: var(--primary-gold);" aria-valuenow="50" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-						<div class="row justify-content-start pb-3">
-							<div class="col-md-12 heading-section ftco-animate reveal">
-								
-								<h1 class="big">About</h1>
-								<h2 class="mb-4">About Me</h2>
-								
-								<p>I am a detail-oriented <strong>Computer Science & Engineering</strong> student with a passion for building scalable software solutions and uncovering data-driven insights. My approach blends technical rigour with a focus on delivering intuitive user experiences and measurable business impact.</p>
-								<ul class="about-info mt-4 px-md-0 px-2 glass-card reveal" style="list-style: none;">
-									<li class="d-flex mb-2"><span>Profile:</span> <span class="ml-2">Fresher</span></li>
-									<li class="d-flex mb-2"><span>Domain:</span> <span class="ml-2">Computer Science & Engineering</span></li>
-									<li class="d-flex mb-2"><span>Education:</span> <span class="ml-2">Bachelor of Engineering</span></li>
-									<li class="d-flex mb-2"><span>Language:</span> <span class="ml-2">English, Hindi</span></li>
-									<li class="d-flex mb-2"><span>BI Tools:</span> <span class="ml-2">Microsoft Power BI, Looker &amp; Tableau</span></li>
-									<li class="d-flex mb-2"><span>Other Skills:</span> <span class="ml-2">Cloud, PySpark, Excel, Git, JIRA, SEO</span></li>
-									<li class="d-flex mb-2"><span>Interest:</span> <span class="ml-2">Traveling, Travel Photography, Coding </span></li>
-								</ul>
-							</div>
-						</div>
-
-
-						<div class="counter-wrap ftco-animate d-flex mt-md-3">
-							<div class="text">
-								<p class="mb-4">
-									<span class="number" data-number="10">0</span> <span>+</span>
-									<span>&nbsp; Projects completed</span>
-								</p>
-								<p><a href="https://www.linkedin.com/in/ishant-raj-b82901219?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="btn btn-primary py-3 px-3">LinkedIn</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-    </section>
-
-
-
-	
-    <section class="ftco-section ftco-no-pb" id="resume-section">
-    	<div class="container">
-    		<div class="row justify-content-center pb-5">
-          <div class="col-md-10 heading-section text-center ftco-animate">
-          	<h1 class="big big-2">Resume</h1>
-            <h2 class="mb-4">Resume</h2>
-            <p>Hey. Ishant Raj  ,
-				Currently I am a student of  Computer science ,Aspiring Tech Professional | Call Center Trained | C Programmer,Java ,Python
-				Email:-ishant786raj@gmail.com | phn.no.8317735828 | City: Motihari State: Bihar |</p>
-          </div>
-        </div>
-
-		<div class="row reveal">
-			<h1 class="big-4">Professional Foundation</h1>
-			<!-- <div class="underline"></div>
-		</div>
-		
-		<div class="row">
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate"> -->
-						<!-- <span class="date">2021-Present</span>
-						<h2>Senior Data Analyst</h2>
-						<span class="position">Merkle</span>
-						<p class="mt-4">Merkle, a leading CXM and media company with over 10K+ professionals globally. It's a part of Dentsu International. 
-							<ul>
-								<li>Analysed ad campaigns, clickstream, and customer surveys data, identified an increasing demand and launched a strategic product line.</li>
-								<li>Developed time series forecasting models to predict sales and optimize marketing budgets, got model performance of 92%.</li>
-								<li>Designed and executed A/B tests, performed rigorous statistical analysis. Led to 20% MoM increase in the conversion rate.</li>
-							</ul>
-						</p>
-					</div>
-
-				</div> -->
-
-				<!-- <div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2018-2021</span>
-						<h2>Senior Data Analyst</h2>
-						<span class="position">iQuanti</span>
-						<p class="mt-4">iQuanti is a data-driven digital marketing analytics and solutions company, helps top 100 global brands. 
-							<ul>
-								<li>Performed in-depth market research and analysis to create online pages. Resulted in ~100% website growth and 30% increase in conversion rate YoY.</li>
-								<li>Delivered multiple training and mentorship sessions on analytical tools like SQL, MS Excel, Power BI, Tableau and Python.</li>
-								<li>Performed migration and enhancements for merchandising dashboard, involved data integration and its feature improvement.</li>
-							</ul>
-						</p>
-					</div>
-
-				</div>
-			</div>
-
-		<br>
-		<br> -->
-
-		<div class="row">
-			<h1 class="big-4">Education</h1>
-			<div class="underline"></div>
-		</div>
-		<div class="row">
-    			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate glass-card mb-4">
-    					<span class="date" style="color:var(--primary-gold)">2024-2028</span>
-    					<h2 class="mt-2">Bachelor of Engineering</h2>
-    					<span class="position">Vishveshwarya Group of Institutions</span>
-    					<p class="mt-4">Pursuing Computer Science & Engineering with a focus on software development and data structures.</p>
-    				</div>
-    			</div>
-
-    			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate glass-card mb-4">
-    					<span class="date" style="color:var(--primary-gold)">2022-2024</span>
-    					<h2 class="mt-2">Higher Secondary School</h2>
-    					<span class="position">BSEB Board</span>
-    					<p class="mt-4">Completed secondary education with a strong foundation in Mathematics and Science.</p>
-    				</div>
-				</div>
-    		</div>
-
-    		<div class="row justify-content-center mt-5">
-    			<div class="col-md-6 text-center ftco-animate">
-    				<p><a href="#" class="btn btn-primary py-4 px-5">Download CV</a></p>
-    			</div>
-    		</div>
-    	</div>
-    </section>
-
-   
-
-    <section class="ftco-section" id="project-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-5">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Projects</h1>
-            <h2 class="mb-4">Projects</h2>
-            <p>A curated selection of projects demonstrating expertise in <strong>Data Analysis, Machine Learning, and SQL-driven business intelligence.</strong></p>
-          </div>
-        </div>
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate reveal">
-          	<div class="blog-entry justify-content-end glass-card">
-              <a href="location-finder.html" class="block-20 zoom-effect rounded" style="background-image: url('images/proj_1.jpg');">
-              </a>
-                         <div class="text mt-3 float-right d-block">
-                <h3 class="heading"><a href="location-finder.html">PIN Code Location Finder</a></h3>
-                <p>A real-time tool to find any Indian location using PIN codes with interactive maps and address lookup.</p>
-                <div class="project-actions mt-3 mb-3">
-                    <a href="location-finder.html#test" class="btn btn-premium btn-sm py-2 px-3 mr-2">Test</a>
-                    <a href="location-finder.html#about" class="btn btn-white btn-outline-white btn-sm py-2 px-3">About this project</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate reveal">
-          	<div class="blog-entry justify-content-end glass-card">
-              <a href="mini-chatbot.html" class="block-20 zoom-effect rounded" style="background-image: url('images/proj_2.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-                <h3 class="heading"><a href="mini-chatbot.html">Mini ChatBoat (Gemini AI)</a></h3>
-                <p>Your Personal AI Assistant. Built with Google Gemini Pro API for advanced language understanding and help.</p>
-                <div class="project-actions mt-3 mb-3">
-                    <a href="mini-chatbot.html#test" class="btn btn-premium btn-sm py-2 px-3 mr-2">Test</a>
-                    <a href="mini-chatbot.html#about" class="btn btn-white btn-outline-white btn-sm py-2 px-3">About this project</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate reveal">
-          	<div class="blog-entry glass-card">
-              <a href="rank-ignite-leaderboard.html" class="block-20 zoom-effect rounded" style="background-image: url('images/proj_3.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-                <h3 class="heading"><a href="rank-ignite-leaderboard.html">Rank Ignite Leaderboard</a></h3>
-                <p>A real-time student performance tracker for the Ignite Club - BugByte. Features dynamic ranking and instant search.</p>
-                <div class="project-actions mt-3 mb-3">
-                    <a href="rank-ignite-leaderboard.html#test" class="btn btn-premium btn-sm py-2 px-3 mr-2">Test</a>
-                    <a href="rank-ignite-leaderboard.html#about" class="btn btn-white btn-outline-white btn-sm py-2 px-3">About this project</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-	<br>
-		<!-- added justify-content-center to center align the last two projects -->
-		<div class="row d-flex justify-content-center">  
-			<div class="col-md-4 d-flex ftco-animate reveal">
-				<div class="blog-entry justify-content-end glass-card">
-				<a href="chess-game.html" class="block-20 zoom-effect rounded" style="background-image: url('images/proj_4.jpg');">
-				</a>
-				<div class="text mt-3 float-right d-block">
-  
-				  <h3 class="heading"><a href="chess-game.html">Grandmaster Chess AI</a></h3>
-				  <p>Play against a custom-built Chess engine with multiple difficulty levels. Features Minimax AI and move tracking.</p>
-				  <div class="project-actions mt-3 mb-3">
-					<a href="chess-game.html#test" class="btn btn-premium btn-sm py-2 px-3 mr-2">Test</a>
-					<a href="chess-game.html#about" class="btn btn-white btn-outline-white btn-sm py-2 px-3">About this project</a>
-				  </div>
-				</div>
-			  </div>
-			</div>
-			<div class="col-md-4 d-flex ftco-animate reveal">
-				<div class="blog-entry justify-content-end glass-card">
-				<a href="customer-segmentation.html" class="block-20 zoom-effect rounded" style="background-image: url('images/proj_5.jpg');">
-				</a>
-				<div class="text mt-3 float-right d-block">
-  
-				  <h3 class="heading"><a href="customer-segmentation.html">PIN Code Location Finder</a></h3>
-				  <p>A real-time location finder tool that uses PIN codes to provide address details and interactive maps via Leaflet.js.</p>
-				</div>
-			  </div>
-			</div>
-		 </div>
-	  </div>
-    </section>
-
-	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-      <div class="container">
-		<div class="row d-md-flex align-items-center">
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="2">0</strong>
-                <span>Achievements</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="3">0</strong>
-                <span>Projects</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="10">0</strong>
-                <span>Mentored Students</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="3">0</strong>
-                <span>Cups of coffee</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-	
-	  <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
-			<!-- <div class="container"> -->
-				<div class="row justify-content-center">
-					<div class="col-md-7 ftco-animate text-center">
-						<h2>More projects on<span> Github  </span> </h2>
-						<div class="heading"> <h4> I love to solve business problems &amp; uncover hidden data stories </h4>
-						<br>
-						<p><a href="https://github.com/Ishant-raj-2006" class="btn btn-primary py-3 px-5">GitHub</a></p>
-						</div>
-					</div>
-				</div>
-			<!-- </div> -->
-		</div>
-	</section>
-
-
-
-    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-      <div class="container">
-      	<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Contact</h1>
-            <h2 class="mb-4">Contact Me</h2>
-            <p>Below are the details to reach out to me!</p>
-          </div>
-        </div>
-
-        <div class="row d-flex contact-info mb-5">
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-map-signs"></span>
-          		</div>
-          		<h3 class="mb-4">Address</h3>
-	            <p>Bihar, India</p>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-phone2"></span>
-          		</div>
-          		<h3 class="mb-4">Contact Number</h3>
-	            <p><a href="tel://0101010101">+91 8317735828</a></p>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-paper-plane"></span>
-          		</div>
-          		<h3 class="mb-4">Email Address</h3>
-	            <p><a href="mailto:info@yoursite.com">-ishant786raj@gmail.com</a></p>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-globe"></span>
-          		</div>
-          		<h3 class="mb-4">Download Resume</h3>
-	            <p><a href="#">resumelink</a></p>
-	          </div>
-          </div>
-
-		  <div class="container">
-			<br>
-			<br>
-			<!-- <div class="row justify-content-center">
-				<div class="col-md-7 ftco-animate text-center">
-					<h2>Have a<span> Question?  </span> <a href="https://forms.gle/uLaTShUKXraAvHJ77" class="btn btn-primary py-3 px-5">Click Here</a> </h2>
-				</div>
-			</div> -->
-				<br>
-					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-					  <li class="ftco-animate normal-txt">Find me on  </li>
-					  <li class="ftco-animate"><a href="https://www.youtube.com/@GuruGamerCentral"><span class="icon-youtube"></span></a></li>
-					  <li class="ftco-animate"><a href="https://www.linkedin.com/in/ishant-raj-b82901219?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><span class="icon-linkedin"></span></a></li>  
-					  <li class="ftco-animate"><a href="https://x.com/Ishant_raj_2006?t=m0kOqpJ--hac8DM53vhPNg&s=09"><span class="icon-twitter"></span></a></li>
-					  <li class="ftco-animate"><a href="https://www.facebook.com/share/1F4yVsbqbF/"><span class="icon-facebook"></span></a></li>
-				      <li class="ftco-animate"><a href="https://www.instagram.com/ishant_raj_2006?igsh=MXBtY2R0amE4ZTFscQ=="><span class="icon-instagram"></span></a></li>
-					</ul>
-				<br>
-		   </div>
-   </div>
- </section>
-
-
- 
-	
-    <footer class="ftco-footer ftco-section">
-		<div class="container">
-		  <div class="row">
-			<div class="col-md-12 text-center">
-  
-			  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-	 &copy;<script>document.write(new Date().getFullYear());</script>  |  <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Me</a>
-	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-			</div>
-		  </div>
-		</div>
-	  </footer>
-
-
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
-
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  
-  <script src="js/main.js"></script>
-
-  <script>
-    // Scroll Reveal Script
-    function reveal() {
-      var reveals = document.querySelectorAll(".reveal");
-      for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var elementTop = reveals[i].getBoundingClientRect().top;
-        var elementVisible = 150;
-        if (elementTop < windowHeight - elementVisible) {
-          reveals[i].classList.add("active");
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Extra styles to override default bootstrap conflicts */
+        .navbar-brand { display: none; }
+        .hero-v2 h1 { letter-spacing: -2px; }
+        .hero-v2 .text-highlight { color: var(--primary-cyan); }
+        .highlight-card { border: 1px solid var(--primary-cyan); background: rgba(0, 242, 254, 0.05) !important; }
+        .bento-icon { font-size: 2rem; color: var(--primary-cyan); margin-bottom: 20px; }
+        .stat-card { text-align: center; }
+        .stat-card .number { font-size: 3rem; font-weight: 800; color: var(--primary-cyan); }
+        
+        /* New Image Integration Styles */
+        .hero-v2 {
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(rgba(2, 2, 4, 0.75), rgba(2, 2, 4, 0.75)), url('images/bg_1.png');
+            background-size: cover;
+            background-position: center 10%;
+            background-repeat: no-repeat;
         }
-      }
-    }
-    window.addEventListener("scroll", reveal);
-    reveal(); // Initial check
-  </script>
-    
-  </body>
+
+        .profile-img-card {
+            padding: 0 !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-surface);
+        }
+
+        .profile-img-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(20%);
+            transition: 0.5s var(--transition);
+        }
+
+        .profile-img-card:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        #contact-section {
+            background: linear-gradient(rgba(2, 2, 4, 0.9), rgba(2, 2, 4, 0.9)), url('images/bg_1.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-v2 {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 100px 0 50px;
+            background: var(--bg-dark);
+            overflow: hidden;
+        }
+
+        .hero-image-frame {
+            position: relative;
+            border-radius: 40px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            transition: 0.5s var(--transition);
+        }
+
+        .hero-image-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: grayscale(10%);
+        }
+
+        .hero-image-frame::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, var(--bg-dark), transparent);
+            opacity: 0.4;
+        }
+
+        .hero-image-frame:hover {
+            transform: translateY(-10px) rotate(1deg);
+            border-color: var(--primary-cyan);
+            box-shadow: 0 30px 60px rgba(0, 242, 254, 0.2);
+        }
+
+        @media (max-width: 991px) {
+            .hero-v2 { padding-top: 150px; text-align: center; }
+            .hero-image-frame { margin-top: 50px; max-width: 400px; margin-left: auto; margin-right: auto; }
+        }
+
+        .typewriter-cursor { position: relative; }
+        .typewriter-cursor::after { content: '|'; position: absolute; right: -15px; animation: blink 0.7s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+        #custom-cursor {
+            width: 20px; height: 20px; background: var(--primary-cyan); border-radius: 50%;
+            position: fixed; pointer-events: none; z-index: 9999; mix-blend-mode: difference;
+            transition: transform 0.1s; display: none;
+        }
+
+        @media (min-width: 992px) { #custom-cursor { display: block; } }
+    </style>
+</head>
+<body>
+    <div id="custom-cursor"></div>
+    <div class="neon-glow" style="top: -10%; left: -10%;"></div>
+    <div class="neon-glow" style="bottom: -10%; right: -10%;"></div>
+
+    <!-- Floating Navigation -->
+    <nav class="floating-nav">
+        <a href="#home-section" class="active">Home</a>
+        <a href="#about-section">About</a>
+        <a href="#project-section">Work</a>
+        <a href="#contact-section">Contact</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home-section" class="hero-v2">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Text Content -->
+                    <div class="col-lg-7">
+                        <div class="hero-content text-left">
+                            <span class="section-label reveal-v2 active">Developer & Engineer</span>
+                            <h1 class="reveal-v2 active" style="font-size: clamp(3rem, 6vw, 5.5rem);">Ishant <span class="text-highlight">Raj</span></h1>
+                            <p class="hero-subtitle reveal-v2 active" style="margin-left: 0; max-width: 550px;">
+                                I build data-driven systems and scalable software. Currently, a student of 
+                                <span id="typing-text" class="text-highlight typewriter-cursor"></span>
+                            </p>
+                            <div class="d-flex gap-3 reveal-v2 active mt-4">
+                                <a href="#project-section" class="btn-cyan">Explore Projects</a>
+                                <a href="#contact-section" class="btn btn-outline-light ml-3" style="border-radius: 100px; padding: 15px 40px;">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Image Content -->
+                    <div class="col-lg-5 reveal-v2 active">
+                        <div class="hero-image-frame">
+                            <img src="images/bg_1.png" alt="Ishant Raj Portrait">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Bento Grid -->
+        <section id="about-section" class="py-5">
+            <div class="container">
+                <div class="text-center mb-5 reveal-v2">
+                    <span class="section-label">Identity</span>
+                    <h2 class="display-4 font-weight-bold">Who I Am</h2>
+                </div>
+                
+                <div class="bento-grid">
+                    <!-- Profile Photo Card -->
+                    <div class="bento-item profile-img-card reveal-v2">
+                        <img src="images/about-me.png" alt="Ishant Raj">
+                    </div>
+
+                    <!-- Bio -->
+                    <div class="bento-item bento-large reveal-v2">
+                        <i class="fas fa-user-astronaut bento-icon"></i>
+                        <h3>The Mission</h3>
+                        <p class="text-dim mt-3">Computer Science Engineer with a relentless focus on creating high-impact software. My philosophy is simple: clean code, smart data, and memorable user experiences.</p>
+                        <div class="mt-4">
+                            <ul class="list-unstyled text-dim">
+                                <li class="mb-2"><i class="fas fa-check mr-2" style="color:var(--primary-cyan)"></i> Bachelor of Engineering (CSE)</li>
+                                <li class="mb-2"><i class="fas fa-check mr-2" style="color:var(--primary-cyan)"></i> Aspiring Software Architect</li>
+                                <li class="mb-2"><i class="fas fa-check mr-2" style="color:var(--primary-cyan)"></i> Tech Stack: C, Java, Python, Web</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Skill Mastery (Learning Progress) -->
+                    <div class="bento-item bento-wide reveal-v2 highlight-card">
+                        <i class="fas fa-graduation-cap bento-icon"></i>
+                        <h3>Learning Matrix</h3>
+                        <p class="text-dim small mb-4">Percentage represents depth of theoretical & practical mastery.</p>
+                        
+                        <div class="skill-progress-container">
+                            <!-- Skill 1 -->
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="small font-weight-bold">C Programming</span>
+                                    <span class="small" style="color:var(--primary-cyan)">95%</span>
+                                </div>
+                                <div class="progress" style="height: 6px; background: rgba(255,255,255,0.05); border-radius: 10px; overflow: visible;">
+                                    <div class="progress-bar" style="width: 95%; background: var(--primary-cyan); border-radius: 10px; box-shadow: 0 0 10px var(--primary-cyan);"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Skill 2 -->
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="small font-weight-bold">Web Development (HTML/CSS/JS)</span>
+                                    <span class="small" style="color:var(--primary-cyan)">75%</span>
+                                </div>
+                                <div class="progress" style="height: 6px; background: rgba(255,255,255,0.05); border-radius: 10px; overflow: visible;">
+                                    <div class="progress-bar" style="width: 75%; background: var(--primary-cyan); border-radius: 10px; box-shadow: 0 0 10px var(--primary-cyan);"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Skill 3 -->
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="small font-weight-bold">Java & Python</span>
+                                    <span class="small" style="color:var(--primary-cyan)">60%</span>
+                                </div>
+                                <div class="progress" style="height: 6px; background: rgba(255,255,255,0.05); border-radius: 10px; overflow: visible;">
+                                    <div class="progress-bar" style="width: 60%; background: var(--primary-cyan); border-radius: 10px; box-shadow: 0 0 10px var(--primary-cyan);"></div>
+                                </div>
+                            </div>
+
+                            <!-- Skill 4 -->
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="small font-weight-bold">Data Analysis</span>
+                                    <span class="small" style="color:var(--primary-cyan)">50%</span>
+                                </div>
+                                <div class="progress" style="height: 6px; background: rgba(255,255,255,0.05); border-radius: 10px; overflow: visible;">
+                                    <div class="progress-bar" style="width: 50%; background: var(--primary-cyan); border-radius: 10px; box-shadow: 0 0 10px var(--primary-cyan);"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="bento-item reveal-v2 stat-card">
+                        <div class="number">10+</div>
+                        <p class="text-dim">Projects Live</p>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="bento-item reveal-v2 highlight-card">
+                        <i class="fas fa-map-marker-alt bento-icon"></i>
+                        <h3>Based in</h3>
+                        <p class="text-dim">Bihar, India</p>
+                        <small>Available globally for remote collaboration.</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="project-section" class="py-5">
+            <div class="container">
+                <div class="mb-5 reveal-v2">
+                    <span class="section-label">Case Studies</span>
+                    <h2 class="display-4 font-weight-bold">Selected Works</h2>
+                </div>
+
+                <div class="project-grid-v2">
+                    <!-- Project 1 -->
+                    <div class="project-card-v2 reveal-v2">
+                        <div class="project-image-wrap">
+                            <img src="images/proj_1.jpg" alt="Location Finder">
+                        </div>
+                        <div class="project-info-v2">
+                            <span class="project-tag">API Integration</span>
+                            <h3>PIN Code Location Finder</h3>
+                            <p class="text-dim">Interactive mapping tool using Leaflet.js and OpenStreetMap API.</p>
+                            <div class="d-flex mt-4 gap-2">
+                                <a href="location-finder.html" class="btn btn-sm btn-outline-light px-4" style="border-radius: 50px;">View Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card-v2 reveal-v2">
+                        <div class="project-image-wrap">
+                            <img src="images/proj_2.jpg" alt="Mini ChatBoat">
+                        </div>
+                        <div class="project-info-v2">
+                            <span class="project-tag">AI / NLP</span>
+                            <h3>Mini ChatBoat AI</h3>
+                            <p class="text-dim">Gemini-powered assistant with advanced language understanding.</p>
+                            <div class="d-flex mt-4 gap-2">
+                                <a href="mini-chatbot.html" class="btn btn-sm btn-outline-light px-4" style="border-radius: 50px;">View Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card-v2 reveal-v2">
+                        <div class="project-image-wrap">
+                            <img src="images/proj_3.jpg" alt="Leaderboard">
+                        </div>
+                        <div class="project-info-v2">
+                            <span class="project-tag">Data Management</span>
+                            <h3>Rank Ignite Leaderboard</h3>
+                            <p class="text-dim">Real-time tracker for Ignite Club performance metrics.</p>
+                            <div class="d-flex mt-4 gap-2">
+                                <a href="rank-ignite-leaderboard.html" class="btn btn-sm btn-outline-light px-4" style="border-radius: 50px;">View Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card-v2 reveal-v2">
+                        <div class="project-image-wrap">
+                            <img src="images/proj_4.jpg" alt="Chess AI">
+                        </div>
+                        <div class="project-info-v2">
+                            <span class="project-tag">Game Engine</span>
+                            <h3>Pro Chess Pro</h3>
+                            <p class="text-dim">Advanced chess engine with Minimax AI levels.</p>
+                            <div class="d-flex mt-4 gap-2">
+                                <a href="chess-game.html" class="btn btn-sm btn-outline-light px-4" style="border-radius: 50px;">View Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card-v2 reveal-v2">
+                        <div class="project-image-wrap">
+                            <img src="images/proj_5.jpg" alt="QR Generator">
+                        </div>
+                        <div class="project-info-v2">
+                            <span class="project-tag">Utility</span>
+                            <h3>Instant QR Generator</h3>
+                            <p class="text-dim">High-speed client-side QR generation and export.</p>
+                            <div class="d-flex mt-4 gap-2">
+                                <a href="qr-generator.html" class="btn btn-sm btn-outline-light px-4" style="border-radius: 50px;">View Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact-section" class="py-5">
+            <div class="container text-center">
+                <div class="reveal-v2">
+                    <span class="section-label">Connect</span>
+                    <h2 class="display-3 font-weight-bold mb-4">Let's build the future.</h2>
+                    <p class="text-dim mb-5">Open for opportunities and creative collaborations.</p>
+                    <div class="d-flex justify-content-center gap-4 flex-wrap mb-5">
+                        <a href="mailto:ishant786raj@gmail.com" class="btn-cyan"><i class="fas fa-envelope mr-2"></i> Email Me</a>
+                        <a href="https://www.linkedin.com/in/ishant-raj-b82901219" class="btn btn-outline-light px-5 py-3" style="border-radius: 100px;"><i class="fab fa-linkedin mr-2"></i> LinkedIn</a>
+                    </div>
+                    <div class="text-dim mt-5">
+                        <p>&copy; 2026 Ishant Raj. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/jquery.min.js"></script>
+    <script>
+        // Custom Cursor Logic
+        const cursor = document.getElementById('custom-cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Typing Animation
+        const textElement = document.getElementById('typing-text');
+        const texts = ['Software Engineering', 'Full Stack Development', 'Computer Science'];
+        let charIndex = 0;
+        let textIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentText = texts[textIndex];
+            if (isDeleting) {
+                textElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                textElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true;
+                setTimeout(type, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                setTimeout(type, 500);
+            } else {
+                setTimeout(type, isDeleting ? 50 : 100);
+            }
+        }
+        type();
+
+        // Scroll Reveal
+        function reveal() {
+            const reveals = document.querySelectorAll(".reveal-v2");
+            reveals.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add("active");
+                }
+            });
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+
+        // Nav Active State
+        window.addEventListener('scroll', () => {
+            let current = "";
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.floating-nav a');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
 </html>
