@@ -75,13 +75,13 @@ body {
 /* --- HERO SECTION --- */
 
 .hero-v2 {
-    height: 100vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
-    justify-content: center;
     position: relative;
-    text-align: center;
-    padding: 0 20px;
+    padding: 100px 0 50px;
+    background: var(--bg-dark);
+    overflow: hidden;
 }
 
 .hero-content h1 {
@@ -100,6 +100,36 @@ body {
     color: var(--text-dim);
     max-width: 600px;
     margin: 0 auto 40px;
+}
+
+.hero-image-frame {
+    position: relative;
+    border-radius: 40px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    transition: 0.5s var(--transition);
+}
+
+.hero-image-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(10%);
+}
+
+.hero-image-frame::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--bg-dark), transparent);
+    opacity: 0.4;
+}
+
+.hero-image-frame:hover {
+    transform: translateY(-10px) rotate(1deg);
+    border-color: var(--primary-cyan);
+    box-shadow: 0 30px 60px rgba(0, 242, 254, 0.2);
 }
 
 /* --- BENTO GRID --- */
@@ -132,6 +162,27 @@ body {
 
 .bento-large { grid-column: span 2; grid-row: span 2; }
 .bento-wide { grid-column: span 2; }
+
+.profile-img-card {
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-surface);
+}
+
+.profile-img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(20%);
+    transition: 0.5s var(--transition);
+}
+
+.profile-img-card:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
 
 /* --- PROJECT CARDS --- */
 
@@ -226,10 +277,39 @@ body {
     transition: 1s var(--transition);
 }
 
+#contact-section {
+    background: linear-gradient(rgba(2, 2, 4, 0.9), rgba(2, 2, 4, 0.9)), url('../html/images/bg_1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Fixes & Overrides */
+.navbar-brand { display: none; }
+.hero-v2 h1 { letter-spacing: -2px; }
+.hero-v2 .text-highlight { color: var(--primary-cyan); }
+.highlight-card { border: 1px solid var(--primary-cyan); background: rgba(0, 242, 254, 0.05) !important; }
+.bento-icon { font-size: 2rem; color: var(--primary-cyan); margin-bottom: 20px; }
+.stat-card { text-align: center; }
+.stat-card .number { font-size: 3rem; font-weight: 800; color: var(--primary-cyan); }
+
+.typewriter-cursor { position: relative; }
+.typewriter-cursor::after { content: '|'; position: absolute; right: -15px; animation: blink 0.7s infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+#custom-cursor {
+    width: 20px; height: 20px; background: var(--primary-cyan); border-radius: 50%;
+    position: fixed; pointer-events: none; z-index: 9999; mix-blend-mode: difference;
+    transition: transform 0.1s; display: none;
+}
+
+@media (min-width: 992px) { #custom-cursor { display: block; } }
+
 @media (max-width: 992px) {
     .bento-grid {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
     }
     .bento-large, .bento-wide { grid-column: span 2; }
+    .hero-v2 { padding-top: 150px; text-align: center; }
+    .hero-image-frame { margin-top: 50px; max-width: 400px; margin-left: auto; margin-right: auto; }
 }
