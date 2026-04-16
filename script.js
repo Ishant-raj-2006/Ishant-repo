@@ -328,3 +328,7 @@ function initChessGame() {
     
     init();
 }
+
+function downloadPortfolio() {
+    window.print();
+}

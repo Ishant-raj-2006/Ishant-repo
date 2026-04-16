@@ -308,3 +308,19 @@ td { padding: 15px; border-bottom: 1px solid var(--glass-border); text-align: ce
     .floating-nav { gap: 15px; padding: 10px 20px; width: 95%; max-width: 500px; }
     .nav-download-link { font-size: 12px; padding: 4px 12px !important; }
 }
+
+/* --- PRINT OPTIMIZATION (For PDF Download) --- */
+@media print {
+    .floating-nav, .neon-glow, #custom-cursor, .btn-download-main, .back-btn, #project-overlay {
+        display: none !important;
+    }
+    body { background: #fff !important; color: #000 !important; }
+    .hero-v2 { min-height: auto; padding-top: 50px; }
+    .hero-content h1 { -webkit-text-fill-color: #000 !important; }
+    .glass-card, .bento-item, .project-card-v2 { 
+        border: 1px solid #ddd !important; 
+        box-shadow: none !important;
+        break-inside: avoid;
+    }
+    .text-dim { color: #555 !important; }
+}
