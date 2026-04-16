@@ -1,10 +1,582 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta http-equiv="refresh" content="0; url=html/index.html" />
-    <title>Redirecting...</title>
+    <title>Ishant Raj | Engineering Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- External Library CSS (CDNs) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Consolidated CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p>If you are not redirected, <a href="html/index.html">click here</a>.</p>
+    <div id="custom-cursor"></div>
+    <div class="neon-glow" style="top: -10%; left: -10%;"></div>
+    <div class="neon-glow" style="bottom: -10%; right: -10%;"></div>
+
+    <!-- Floating Navigation -->
+    <nav class="floating-nav">
+        <a href="#home-section" class="active">Home</a>
+        <a href="#about-section">About</a>
+        <a href="#project-section">Work</a>
+        <a href="#contact-section">Contact</a>
+        <a href="portfolio.pdf" download class="nav-download-link"><i class="fas fa-file-download"></i> Download</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home-section" class="hero-v2">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <div class="hero-content text-left">
+                            <span class="section-label reveal-v2 active">Developer & Engineer</span>
+                            <h1 class="reveal-v2 active">Ishant <span class="text-highlight">Raj</span></h1>
+                            <p class="hero-subtitle reveal-v2 active" style="margin-left: 0; max-width: 550px;">
+                                I build data-driven systems and scalable software. Currently, a student of 
+                                <span id="typing-text" class="text-highlight typewriter-cursor"></span>
+                            </p>
+                            <div class="d-flex gap-3 reveal-v2 active mt-4">
+                                <a href="#project-section" class="btn-cyan">Explore Projects</a>
+                                <a href="portfolio.pdf" download class="btn-download-main ml-3">
+                                    <i class="fas fa-file-pdf mr-2"></i> Download CV
+                                </a>
+                                <a href="#contact-section" class="btn btn-outline-light ml-3" style="border-radius: 100px; padding: 15px 40px;">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 reveal-v2 active">
+                        <div class="hero-image-frame">
+                            <img src="images/bg_1.png" alt="Ishant Raj Portrait">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about-section" class="py-5">
+            <div class="container">
+                <div class="text-center mb-5 reveal-v2">
+                    <span class="section-label">Identity</span>
+                    <h2 class="display-4 font-weight-bold">Who I Am</h2>
+                </div>
+                <div class="bento-grid">
+                    <div class="bento-item profile-img-card reveal-v2">
+                        <img src="images/about-me.png" alt="Ishant Raj">
+                    </div>
+                    <div class="bento-item bento-large reveal-v2">
+                        <i class="fas fa-user-astronaut bento-icon"></i>
+                        <h3>The Mission</h3>
+                        <p class="text-dim mt-3">Computer Science Engineer with a relentless focus on creating high-impact software. My philosophy: clean code, smart data, and memorable user experiences.</p>
+                        <div class="mt-4">
+                            <ul class="list-unstyled text-dim">
+                                <li class="mb-2"><i class="fas fa-check mr-2" style="color:var(--primary-cyan)"></i> Bachelor of Engineering (CSE)</li>
+                                <li class="mb-2"><i class="fas fa-check mr-2" style="color:var(--primary-cyan)"></i> Aspiring Software Architect</li>
+                                <li class="mb-2"><i class="fas fa-check mr-2" style="color:var(--primary-cyan)"></i> Tech Stack: C, Java, Python, Web</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bento-item bento-wide reveal-v2 highlight-card">
+                        <i class="fas fa-graduation-cap bento-icon"></i>
+                        <h3>Learning Matrix</h3>
+                        <p class="text-dim small mb-4">Percentage represents depth of theoretical & practical mastery.</p>
+                        
+                        <div class="skill-progress-container">
+                            <!-- Skill 1 -->
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="small font-weight-bold">C Programming</span>
+                                    <span class="small" style="color:var(--primary-cyan)">95%</span>
+                                </div>
+                                <div class="progress" style="height: 6px; background: rgba(255,255,255,0.05); border-radius: 10px; overflow: visible;">
+                                    <div class="progress-bar" style="width: 95%; background: var(--primary-cyan); border-radius: 10px; box-shadow: 0 0 10px var(--primary-cyan);"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Skill 2 -->
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="small font-weight-bold">Web Development (HTML/CSS/JS)</span>
+                                    <span class="small" style="color:var(--primary-cyan)">75%</span>
+                                </div>
+                                <div class="progress" style="height: 6px; background: rgba(255,255,255,0.05); border-radius: 10px; overflow: visible;">
+                                    <div class="progress-bar" style="width: 75%; background: var(--primary-cyan); border-radius: 10px; box-shadow: 0 0 10px var(--primary-cyan);"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Skill 3 -->
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="small font-weight-bold">Java & Python</span>
+                                    <span class="small" style="color:var(--primary-cyan)">60%</span>
+                                </div>
+                                <div class="progress" style="height: 6px; background: rgba(255,255,255,0.05); border-radius: 10px; overflow: visible;">
+                                    <div class="progress-bar" style="width: 60%; background: var(--primary-cyan); border-radius: 10px; box-shadow: 0 0 10px var(--primary-cyan);"></div>
+                                </div>
+                            </div>
+
+                            <!-- Skill 4 -->
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="small font-weight-bold">Data Analysis</span>
+                                    <span class="small" style="color:var(--primary-cyan)">50%</span>
+                                </div>
+                                <div class="progress" style="height: 6px; background: rgba(255,255,255,0.05); border-radius: 10px; overflow: visible;">
+                                    <div class="progress-bar" style="width: 50%; background: var(--primary-cyan); border-radius: 10px; box-shadow: 0 0 10px var(--primary-cyan);"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bento-item reveal-v2 stat-card"><div class="number">10+</div><p class="text-dim">Projects Live</p></div>
+                    <div class="bento-item reveal-v2 highlight-card">
+                        <i class="fas fa-map-marker-alt bento-icon"></i>
+                        <h3>Based in</h3>
+                        <p class="text-dim">Bihar, India</p>
+                        <small>Available globally for remote collaboration.</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="project-section" class="py-5">
+            <div class="container">
+                <div class="mb-5 reveal-v2">
+                    <span class="section-label">Case Studies</span>
+                    <h2 class="display-4 font-weight-bold">Selected Works</h2>
+                </div>
+                <div class="project-grid-v2">
+                    <!-- Project 1 -->
+                    <div class="project-card-v2 reveal-v2">
+                        <div class="project-image-wrap">
+                            <img src="images/proj_1.jpg" alt="Location Finder">
+                        </div>
+                        <div class="project-info-v2">
+                            <span class="project-tag">API Integration</span>
+                            <h3>PIN Code Location Finder</h3>
+                            <p class="text-dim">Interactive mapping tool using Leaflet.js and OpenStreetMap API.</p>
+                            <div class="d-flex mt-4 gap-2">
+                                <button onclick="openProject('location-finder')" class="btn btn-sm btn-outline-light px-4" style="border-radius: 50px;">View Case Study</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card-v2 reveal-v2">
+                        <div class="project-image-wrap">
+                            <img src="images/proj_2.jpg" alt="Mini ChatBoat">
+                        </div>
+                        <div class="project-info-v2">
+                            <span class="project-tag">AI / NLP</span>
+                            <h3>Mini ChatBoat AI</h3>
+                            <p class="text-dim">Gemini-powered assistant with advanced language understanding.</p>
+                            <div class="d-flex mt-4 gap-2">
+                                <button onclick="openProject('mini-chatbot')" class="btn btn-sm btn-outline-light px-4" style="border-radius: 50px;">View Case Study</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card-v2 reveal-v2">
+                        <div class="project-image-wrap">
+                            <img src="images/proj_3.jpg" alt="Leaderboard">
+                        </div>
+                        <div class="project-info-v2">
+                            <span class="project-tag">Data Management</span>
+                            <h3>Rank Ignite Leaderboard</h3>
+                            <p class="text-dim">Real-time tracker for Ignite Club performance metrics.</p>
+                            <div class="d-flex mt-4 gap-2">
+                                <button onclick="openProject('rank-ignite-leaderboard')" class="btn btn-sm btn-outline-light px-4" style="border-radius: 50px;">View Case Study</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card-v2 reveal-v2">
+                        <div class="project-image-wrap">
+                            <img src="images/proj_4.jpg" alt="Chess AI">
+                        </div>
+                        <div class="project-info-v2">
+                            <span class="project-tag">Game Engine</span>
+                            <h3>Pro Chess Pro</h3>
+                            <p class="text-dim">Advanced chess engine with Minimax AI levels.</p>
+                            <div class="d-flex mt-4 gap-2">
+                                <button onclick="openProject('chess-game')" class="btn btn-sm btn-outline-light px-4" style="border-radius: 50px;">View Case Study</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card-v2 reveal-v2">
+                        <div class="project-image-wrap">
+                            <img src="images/proj_5.jpg" alt="QR Generator">
+                        </div>
+                        <div class="project-info-v2">
+                            <span class="project-tag">Utility</span>
+                            <h3>Instant QR Generator</h3>
+                            <p class="text-dim">High-speed client-side QR generation and export.</p>
+                            <div class="d-flex mt-4 gap-2">
+                                <button onclick="openProject('qr-generator')" class="btn btn-sm btn-outline-light px-4" style="border-radius: 50px;">View Case Study</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact-section" class="py-5">
+            <div class="container text-center">
+                <div class="reveal-v2">
+                    <span class="section-label">Connect</span>
+                    <h2 class="display-3 font-weight-bold mb-4">Let's build the future.</h2>
+                    <div class="d-flex justify-content-center gap-4 flex-wrap mb-5">
+                        <a href="mailto:ishant786raj@gmail.com" class="btn-cyan">Email Me</a>
+                        <a href="https://linkedin.com/in/ishant-raj-b82901219" target="_blank" class="btn btn-outline-light px-5 py-3" style="border-radius: 100px;">LinkedIn</a>
+                        <a href="https://www.geeksforgeeks.org/profile/ishant7bne8?tab=activity" target="_blank" class="btn-gfg ml-md-2"><i class="fa-brands fa-geeksforgeeks mr-2"></i>GeeksforGeeks</a>
+                    </div>
+                    <p class="text-dim">&copy; 2026 Ishant Raj. All rights reserved.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project Details Overlay -->
+    <div id="project-overlay">
+        <a onclick="closeProject()" class="btn btn-outline-light back-btn">← Back</a>
+        <div id="overlay-main-content"></div>
+    </div>
+
+    <!-- Templates for Projects -->
+    <template id="template-location-finder">
+        <header class="project-hero" style="background-image: url('images/proj_1.jpg');">
+            <div class="container">
+                <h1 class="display-3" style="color: var(--primary-gold);">Location Finder</h1>
+                <p class="lead text-white">Instant PIN Code Location Lookup Tool</p>
+            </div>
+        </header>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
+                        <h2 class="text-center">Live Project</h2>
+                        <p class="text-center mb-5">Try entering any Indian PIN code below to see the location details and an interactive map.</p>
+                        <div class="finder-container">
+                            <input type="text" id="pincode" placeholder="Enter 6-digit pin code" maxlength="6">
+                            <div id="results"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-md-7">
+                        <h2>Project Overview</h2>
+                        <p>This application allows users to find geographical locations in India by entering a 6-digit PIN code. It fetches real-time data using the Nominatim OpenStreetMap API and visualizes it using Leaflet.js.</p>
+                        <div class="glass-card mt-4">
+                            <h4 style="color: var(--primary-gold);">Core Functionality</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">📍 Dynamic PIN code validation</li>
+                                <li class="mb-2">🗺️ Interactive Map with precise markers</li>
+                                <li class="mb-2">🌐 Real-time address resolution via API</li>
+                                <li class="mb-2">⚡ Minimalistic and fast user experience</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="glass-card">
+                            <h4 style="color: var(--primary-gold);">Dev Notes</h4>
+                            <p>Built as a lightweight utility tool. The logic focuses on asynchronous data handling and clean UI updates without page reloads.</p>
+                            <a href="https://github.com/Ishant-raj-2006" class="btn btn-cyan btn-block mt-4">View Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="template-mini-chatbot">
+        <header class="project-hero" style="background-image: url('images/proj_2.jpg');">
+            <div class="container">
+                <h1 class="display-3" style="color: var(--primary-gold);">Mini ChatBoat</h1>
+                <p class="lead text-white">Advanced Gemini AI Powered Virtual Assistant</p>
+            </div>
+        </header>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-11">
+                        <h2 class="text-center mb-5">Talk to ChatBoat</h2>
+                        <div class="chat-app-container">
+                            <div class="chat-sidebar">
+                                <div class="mb-4 d-flex align-items-center" style="color: var(--primary-gold);">
+                                    <i class="fas fa-robot mr-2"></i><strong>ChatBoat AI</strong>
+                                </div>
+                                <button id="newChat" class="btn btn-cyan btn-sm btn-block mb-4"><i class="fas fa-plus mr-2"></i>New Chat</button>
+                                <div class="p-2 bg-dark rounded small"><i class="far fa-message mr-2"></i>Welcome Session</div>
+                            </div>
+                            <div class="chat-main-area">
+                                <div class="p-3 border-bottom d-flex justify-content-between align-items-center" style="border-color: var(--glass-border) !important;">
+                                    <div><span class="status-dot"></span><small id="statusText">Online</small></div>
+                                </div>
+                                <div class="chat-messages" id="messagesContainer">
+                                    <div class="message bot">
+                                        Hello! I am **ChatBoat**, your AI assistant powered by **Gemini**. I can help you with programming, math, logic, or just general chat. How can I assist you today?
+                                    </div>
+                                </div>
+                                <div class="chat-input-container">
+                                    <form id="chatForm" class="input-wrapper">
+                                        <input type="text" id="userInput" placeholder="Ask me anything..." autocomplete="off">
+                                        <button type="submit" class="send-btn"><i class="fas fa-paper-plane"></i></button>
+                                    </form>
+                                    <p class="text-center mt-2" style="font-size: 0.7rem; color: var(--text-dim);">AI may produce inaccurate information. Powered by Google Gemini.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-md-7">
+                        <h2>Project Overview</h2>
+                        <p>Mini ChatBoat is a sophisticated virtual assistant that combines local logic with powerful large language models using the **Google Gemini Pro API**.</p>
+                        <div class="glass-card mt-4">
+                            <h4 style="color: var(--primary-gold);">Advanced Technical Features</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">🧠 **Generative AI**: Seamless integration with Gemini 1.5 Flash.</li>
+                                <li class="mb-2">💻 **Coding Engine**: Built-in regex detection for programming syntax.</li>
+                                <li class="mb-2">📊 **Math.js Integration**: Local evaluation for high-speed mathematical operations.</li>
+                                <li class="mb-2">✨ **Dynamic Formatting**: Automatic Markdown and code-block rendering.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="glass-card">
+                            <h4 style="color: var(--primary-gold);">Technical Stack</h4>
+                            <p>Developed using modern JavaScript architecture with a focus on asynchronous state management.</p>
+                            <div class="mt-4">
+                                <span class="tech-badge">Gemini API</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">Math.js</span>
+                            </div>
+                            <a href="https://github.com/Ishant-raj-2006" class="btn btn-cyan btn-block mt-4">View Source code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="template-rank-ignite-leaderboard">
+        <header class="project-hero" style="background-image: url('images/proj_3.jpg');">
+            <div class="container">
+                <h1 class="display-3" style="color: var(--primary-gold);">Rank Ignite Leaderboard</h1>
+                <p class="lead text-white">IGNITE CLUB - BUGBYTE Student Performance Tracker</p>
+            </div>
+        </header>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <h2 class="text-center mb-5">Ignite Rankings</h2>
+                        <div class="leaderboard-container">
+                            <div id="welcome-overlay">
+                                <h3>Welcome to</h3>
+                                <p>IGNITE CLUB - BUGBYTE 🎉</p>
+                                <button id="enterBtn">Click to Enter</button>
+                            </div>
+                            <div class="search-box">
+                                <input type="text" id="searchInput" placeholder="Search by Roll Number...">
+                            </div>
+                            <div class="table-responsive">
+                                <table id="dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Rank</th>
+                                            <th>Roll No</th>
+                                            <th>Name</th>
+                                            <th>Points</th>
+                                            <th>Profiles</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tableBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-md-7">
+                        <h2>Project Overview</h2>
+                        <p>Designed and developed a real-time student ranking system for the **Ignite Club - BugByte**.</p>
+                        <div class="glass-card mt-4">
+                            <h4 style="color: var(--primary-gold);">Core Features</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">🏆 **Dynamic Ranking**: Automatic sorting based on points.</li>
+                                <li class="mb-2">🔍 **Instant Search**: Optimized roll-number based filtering.</li>
+                                <li class="mb-2">🔗 **Social Connectivity**: Links to LinkedIn and GitHub.</li>
+                                <li class="mb-2">🎭 **Interactive UX**: Cinematic welcome screen with speech synthesis.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="glass-card">
+                            <h4 style="color: var(--primary-gold);">Technical Stack</h4>
+                            <div class="mt-4">
+                                <span class="tech-badge">Vanilla JS</span>
+                                <span class="tech-badge">Speech API</span>
+                                <span class="tech-badge">Responsive UI</span>
+                            </div>
+                            <a href="https://github.com/Ishant-raj-2006" class="btn btn-cyan btn-block mt-4">View Club Repository</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="template-chess-game">
+        <header class="project-hero" style="background-image: url('images/proj_4.jpg');">
+            <div class="container">
+                <h1 class="display-3" style="color: var(--primary-gold);">Grandmaster Chess</h1>
+                <p class="lead text-white">Professional Chess Engine — Human vs AI</p>
+            </div>
+        </header>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-11">
+                        <h2 class="text-center mb-5">Play the Game</h2>
+                        <div class="chess-game-wrapper">
+                            <div id="homeScreen" class="screen">
+                                <div class="card bg-dark">
+                                    <h3>Pro Chess</h3>
+                                    <p class="lead text-muted">Play vs AI — Choose a difficulty</p>
+                                    <div class="modes">
+                                        <button class="mode-btn" data-mode="normal">Normal</button>
+                                        <button class="mode-btn" data-mode="medium">Medium</button>
+                                        <button class="mode-btn" data-mode="hard">Hard</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="gameScreen" class="screen hidden">
+                                <div class="topbar">
+                                    <span id="modeLabel" class="mr-3"></span>
+                                    <span id="turnLabel" style="color:var(--primary-gold)"></span>
+                                    <div id="whiteClock" class="clock">Time: <span id="whiteTime">05:00</span></div>
+                                </div>
+                                <div id="board" class="board mx-auto"></div>
+                                <div class="mt-4 text-center">
+                                    <button id="btnRestart" class="btn btn-cyan px-4">Restart Game</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-md-7">
+                        <h2>Project Overview</h2>
+                        <p>A pro-grade Chess engine features a sophisticated Negamax algorithm with Alpha-Beta pruning.</p>
+                        <div class="glass-card mt-4">
+                            <h4 style="color: var(--primary-gold);">Engine Architecture</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">🧠 **Strategic AI**: Hard mode utilizes a 2-ply Negamax recursive search.</li>
+                                <li class="mb-2">♟️ **Unicode Rendering**: High-performance rendering using chess glyphs.</li>
+                                <li class="mb-2">⏲️ **Blitz Timing**: Integrated countdown timers.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="glass-card">
+                            <h4 style="color: var(--primary-gold);">Technical Stack</h4>
+                            <div class="mt-4">
+                                <span class="tech-badge">Negamax</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">Algorithm Design</span>
+                            </div>
+                            <a href="https://github.com/Ishant-raj-2006" class="btn btn-cyan btn-block mt-4">Explore AI Engine</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="template-qr-generator">
+        <header class="project-hero" style="background-image: url('images/proj_5.jpg');">
+            <div class="container">
+                <h1 class="display-3" style="color: var(--primary-gold);">QR Code Generator</h1>
+                <p class="lead text-white">Instant QR Code Generation for URLs and Text</p>
+            </div>
+        </header>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="qr-card">
+                            <h2 class="mb-4">Generate Your QR Code</h2>
+                            <div class="input-group mb-3">
+                                <input type="text" id="qr-input" value="https://github.com/Ishant-raj-2006" class="form-control" style="background:rgba(0,0,0,0.2);color:white;border-color:var(--primary-gold);">
+                            </div>
+                            <div id="qrcode"></div>
+                            <div class="mt-4">
+                                <button id="btn-download" class="btn btn-cyan px-5">Download QR Image</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-md-7">
+                        <h2>Project Overview</h2>
+                        <p>A fast, client-side solution for generating high-quality QR codes instantly.</p>
+                        <div class="glass-card mt-4">
+                            <h4 style="color: var(--primary-gold);">Technical Capabilities</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">⚡ **Real-time Generation**: QR code updates as you type.</li>
+                                <li class="mb-2">💾 **Export Support**: High-resolution image download.</li>
+                                <li class="mb-2">🔒 **Privacy First**: All processing is done locally.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="glass-card">
+                            <h4 style="color: var(--primary-gold);">Technical Stack</h4>
+                            <div class="mt-4">
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">QRCode.js</span>
+                                <span class="tech-badge">Canvas API</span>
+                            </div>
+                            <a href="https://github.com/Ishant-raj-2006" class="btn btn-cyan btn-block mt-4">View Source</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <!-- Library Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    
+    <!-- Consolidated Script -->
+    <script src="script.js"></script>
 </body>
 </html>
