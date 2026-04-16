@@ -244,6 +244,13 @@ td { padding: 15px; border-bottom: 1px solid var(--glass-border); text-align: ce
 #qr-input { width: 100%; max-width: 500px; padding: 15px 25px; border-radius: 50px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--primary-gold); color: #fff; outline: none; }
 #qrcode { background: white; padding: 20px; border-radius: 10px; display: inline-block; margin-top: 20px; }
 
+/* Calendar Specific */
+.calendar-app-container { padding: 40px; text-align: center; }
+#calendar-year { max-width: 200px; margin: 0 auto; text-align: center; font-size: 1.5rem; }
+#calendar-output { text-align: left; margin-top: 20px; border-radius: 15px; border: 1px solid var(--glass-border); height: 500px; }
+#calendar-output::-webkit-scrollbar { width: 8px; }
+#calendar-output::-webkit-scrollbar-thumb { background: var(--primary-cyan); border-radius: 10px; }
+
 /* Chess Styles */
 .chess-game-wrapper {
     background: linear-gradient(180deg, #0b1020, #071027); border-radius: 20px;

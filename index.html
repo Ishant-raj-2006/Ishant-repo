@@ -229,6 +229,21 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Project 6 -->
+                    <div class="project-card-v2 reveal-v2">
+                        <div class="project-image-wrap">
+                            <img src="images/proj_6.jpg" alt="Calendar Generator">
+                        </div>
+                        <div class="project-info-v2">
+                            <span class="project-tag">Python Scripting</span>
+                            <h3>Calendar Generator</h3>
+                            <p class="text-dim">Automated calendar rendering system using Python module.</p>
+                            <div class="d-flex mt-4 gap-2">
+                                <button onclick="openProject('calendar-generator')" class="btn btn-sm btn-outline-light px-4" style="border-radius: 50px;">View Case Study</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -563,6 +578,60 @@
                                 <span class="tech-badge">Canvas API</span>
                             </div>
                             <a href="https://github.com/Ishant-raj-2006" class="btn btn-cyan btn-block mt-4">View Source</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="template-calendar-generator">
+        <header class="project-hero" style="background-image: url('images/proj_6.jpg');">
+            <div class="container">
+                <h1 class="display-3" style="color: var(--primary-gold);">Calendar Generator</h1>
+                <p class="lead text-white">Python-based Automated Dynamic Calendar System</p>
+            </div>
+        </header>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
+                        <h2 class="text-center">Live Preview</h2>
+                        <p class="text-center mb-5">Generated output rendered from Python logic. Enter a year to see the full yearly view.</p>
+                        <div class="calendar-app-container glass-card">
+                            <div class="d-flex mb-4">
+                                <input type="number" id="calendar-year" value="2024" class="form-control mr-2" style="background:rgba(0,0,0,0.3); color:white; border-color:var(--primary-gold);">
+                                <button id="generate-calendar" class="btn btn-cyan px-4">Generate</button>
+                            </div>
+                            <pre id="calendar-output" style="background:rgba(0,0,0,0.5); padding:20px; color:var(--primary-cyan); font-family: 'Courier New', Courier, monospace; overflow-x:auto; line-height:1.2;"></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-md-7">
+                        <h2>Project Overview</h2>
+                        <p>A script-based utility that utilizes Python's built-in `calendar` module to generate formatted text representations of any given year. This project demonstrates simple but effective automation of data visualization.</p>
+                        <div class="glass-card mt-4">
+                            <h4 style="color: var(--primary-gold);">Technical Implementation</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">🐍 **Python Powered**: Uses the native ASCII calendar generation engine.</li>
+                                <li class="mb-2">⚙️ **Input Driven**: Dynamic generation based on user-provided year data.</li>
+                                <li class="mb-2">📜 **Text Rendering**: High-performance character-based layout.</li>
+                                <li class="mb-2">🛠️ **Scalability**: Can effortlessly generate calendars for any AD year.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="glass-card">
+                            <h4 style="color: var(--primary-gold);">Development Stack</h4>
+                            <div class="mt-4">
+                                <span class="tech-badge">Python 3.x</span>
+                                <span class="tech-badge">Scripting</span>
+                                <span class="tech-badge">Automation</span>
+                            </div>
+                            <a href="https://github.com/Ishant-raj-2006" class="btn btn-cyan btn-block mt-4">View Source code</a>
                         </div>
                     </div>
                 </div>

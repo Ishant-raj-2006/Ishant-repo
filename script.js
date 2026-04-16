@@ -112,6 +112,7 @@ function initProjectLogic(projectId) {
         case 'rank-ignite-leaderboard': initLeaderboard(); break;
         case 'chess-game': initChessGame(); break;
         case 'qr-generator': initQRGenerator(); break;
+        case 'calendar-generator': initCalendarGenerator(); break;
     }
 }
 
@@ -327,6 +328,52 @@ function initChessGame() {
     function chooseAI(){ const ms=[]; for(let r=0;r<8;r++) for(let c=0;c<8;c++){ if(board[r][c]?.c==='b') ms.push({from:{r,c}, stay:{r,c}}); } return ms[0]; }
     
     init();
+}
+
+function initCalendarGenerator() {
+    const yearInput = document.getElementById('calendar-year');
+    const generateBtn = document.getElementById('generate-calendar');
+    const output = document.getElementById('calendar-output');
+
+    if (!yearInput || !generateBtn || !output) return;
+
+    function generateCalendarText(year) {
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        const days = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
+        
+        let fullCalendar = `      Year ${year}\n\n`;
+        
+        for (let m = 0; m < 12; m++) {
+            fullCalendar += `      ${months[m]}\n`;
+            fullCalendar += days.join(" ") + "\n";
+            
+            const firstDay = new Date(year, m, 1).getDay(); // 0 is Sun
+            let adjustedFirstDay = firstDay === 0 ? 6 : firstDay - 1; // Adjust to Mo-Su
+            
+            let line = " ".repeat(adjustedFirstDay * 3);
+            const daysInMonth = new Date(year, m + 1, 0).getDate();
+            
+            for (let d = 1; d <= daysInMonth; d++) {
+                line += d.toString().padStart(2, " ") + " ";
+                if ((d + adjustedFirstDay) % 7 === 0 || d === daysInMonth) {
+                    fullCalendar += line + "\n";
+                    line = "";
+                }
+            }
+            fullCalendar += "\n";
+        }
+        return fullCalendar;
+    }
+
+    generateBtn.addEventListener('click', () => {
+        const year = parseInt(yearInput.value);
+        if (year > 0) {
+            output.textContent = generateCalendarText(year);
+        }
+    });
+
+    // Initial generation
+    output.textContent = generateCalendarText(2024);
 }
 
 function downloadPortfolio() {
