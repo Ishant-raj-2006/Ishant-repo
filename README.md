@@ -47,7 +47,7 @@ md
 ## 👨‍💻 Author
 
 Ishant Raj  
-📧 Connect with me on LinkedIn [(add link later)](https://www.linkedin.com/in/ishant-raj-b82901219/)
+📧 Connect with me on LinkedIn [( Contact Me )](https://www.linkedin.com/in/ishant-raj-b82901219/)
 
 
 ## 📸 Screenshots
