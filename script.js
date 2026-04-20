@@ -176,16 +176,24 @@ const cccFirebaseConfig = {
 };
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
 const cccApp = initializeApp(cccFirebaseConfig);
 const cccDb = getDatabase(cccApp);
 let cccData = null;
 
+function saveCCCToCloud() {
+    return set(ref(cccDb, 'ccc_master_data'), cccData);
+}
+
 function initCCCManagement() {
     onValue(ref(cccDb, 'ccc_master_data'), (snapshot) => {
         cccData = snapshot.val();
-        console.log("CCC Data Sync:", cccData);
+        if (cccData && document.getElementById('ccc-v-view-dashboard').classList.contains('active')) {
+            // If already on dashboard, refresh current tab
+            const activeTab = document.querySelector('.ccc-v-tab-btn.active')?.dataset.tab;
+            if (activeTab) switchCCCTab(activeTab);
+        }
     });
 
     const loginForm = document.getElementById('ccc-v-login-form');
@@ -225,6 +233,81 @@ window.switchCCCView = function(view) {
     if (target) target.classList.add('active');
 };
 
+window.switchCCCTab = function(tab) {
+    document.querySelectorAll('.ccc-v-tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+    const content = document.getElementById('ccc-v-admin-content');
+    if (!content) return;
+
+    if (tab === 'students') {
+        content.innerHTML = `
+            <div class="d-flex justify-content-between mb-3"><h4>Manage Students</h4> <button class="btn-cyan px-3" onclick="vAddStudent()">+ Add Student</button></div>
+            <table class="ccc-v-table">
+                <thead><tr><th>Name</th><th>Class</th><th>Fees</th><th>Action</th></tr></thead>
+                <tbody>${(cccData.students || []).map(s => `<tr><td>${s.name}</td><td>${s.class}th</td><td>P:₹${s.fee.paid}</td><td><button onclick="vEditFee('${s.email}')" class="btn-cyan px-2" style="font-size:0.7rem">Fee</button></td></tr>`).join('')}</tbody>
+            </table>
+        `;
+    } else if (tab === 'attendance') {
+        content.innerHTML = `
+            <h4>Mark Attendance</h4>
+            <div class="form-row mb-3 mt-3">
+                <select id="vAttClass" class="ccc-v-input" onchange="vLoadAttList()">
+                    <option value="">Select Class</option>
+                    <option value="8">8th</option><option value="9">9th</option><option value="10">10th</option><option value="11">11th</option><option value="12">12th</option>
+                </select>
+                <input type="text" id="vAttTopic" class="ccc-v-input" placeholder="Topic Name">
+            </div>
+            <div id="vAttList"></div>
+            <button onclick="vSaveAttendance()" class="btn-cyan w-100 mt-3">Save Attendance</button>
+        `;
+    } else if (tab === 'timetable') {
+        content.innerHTML = `
+            <h4>Update Timetable</h4>
+            ${[8,9,10,11,12].map(c => `<div class="mb-2"><label>Class ${c}th</label><input type="text" class="ccc-v-input v-tt-in" data-class="${c}" value="${cccData.timetable[c] || ''}"></div>`).join('')}
+            <button onclick="vSaveTimetable()" class="btn-cyan w-100 mt-2">Update All</button>
+        `;
+    }
+};
+
+window.vAddStudent = () => {
+    const n = prompt("Name:"), c = prompt("Class:"), e = prompt("Email:"), p = prompt("Phone:");
+    if (n && c && e && p) {
+        if (!cccData.students) cccData.students = [];
+        cccData.students.push({ name: n, class: c, email: e.toLowerCase(), phone: p, fee: { paid: 0, due: 1500 } });
+        saveCCCToCloud().then(() => alert("Student Added!"));
+    }
+};
+
+window.vLoadAttList = () => {
+    const cls = document.getElementById('vAttClass').value;
+    const div = document.getElementById('vAttList');
+    if (!cls) return div.innerHTML = "";
+    const list = (cccData.students || []).filter(s => s.class === cls);
+    div.innerHTML = `<table class="ccc-v-table"><thead><tr><th>Name</th><th>Status</th></tr></thead><tbody>${list.map(s => `<tr><td>${s.name}</td><td><select class="ccc-v-input v-att-s" data-email="${s.email}"><option value="P">Present</option><option value="A">Absent</option></select></td></tr>`).join('')}</tbody></table>`;
+};
+
+window.vSaveAttendance = () => {
+    const cls = document.getElementById('vAttClass').value;
+    const topic = document.getElementById('vAttTopic').value;
+    if (!cls || !topic) return alert("Fill class and topic!");
+    const statusData = {};
+    document.querySelectorAll('.v-att-s').forEach(s => statusData[s.dataset.email] = s.value);
+    if (!cccData.attendanceRecords) cccData.attendanceRecords = [];
+    cccData.attendanceRecords.push({ date: new Date().toLocaleDateString(), class: cls, topic, data: statusData });
+    saveCCCToCloud().then(() => alert("Attendance Saved!"));
+};
+
+window.vSaveTimetable = () => {
+    document.querySelectorAll('.v-tt-in').forEach(i => cccData.timetable[i.dataset.class] = i.value);
+    saveCCCToCloud().then(() => alert("Timetable Updated!"));
+};
+
+window.vEditFee = (email) => {
+    const s = cccData.students.find(x => x.email === email);
+    if (!s) return;
+    const p = prompt("Enter Paid Amount:", s.fee.paid);
+    if (p !== null) { s.fee.paid = p; saveCCCToCloud().then(() => alert("Fee Updated!")); }
+};
+
 function renderCCCDashboard(user) {
     window.switchCCCView('dashboard');
     const root = document.getElementById('ccc-v-view-dashboard');
@@ -245,7 +328,7 @@ function renderCCCDashboard(user) {
             <aside class="ccc-v-sidebar">
                 <div class="text-center mb-4">
                     <img src="coaching_center_logo_1775973304457.png" style="width: 80px; border-radius: 50%; border: 3px solid var(--primary-cyan); padding: 3px;">
-                    <h3 class="mt-3">${user.name}</h3>
+                    <h3 class="mt-3" style="font-size:1.1rem">${user.name}</h3>
                     <p class="text-dim">Class ${uClass}th</p>
                 </div>
                 <button class="btn-cyan w-100" onclick="switchCCCView('login')">Logout</button>
@@ -271,17 +354,21 @@ function renderCCCAdmin() {
     window.switchCCCView('dashboard');
     const root = document.getElementById('ccc-v-view-dashboard');
     root.innerHTML = `
-        <div class="ccc-v-dashboard" style="grid-template-columns: 1fr;">
-            <div class="ccc-v-card">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h3>Teacher Admin Control Panel</h3>
-                    <button class="btn-cyan" onclick="switchCCCView('login')">Logout</button>
+        <div class="ccc-v-dashboard">
+            <aside class="ccc-v-sidebar">
+                <h4 class="mb-4" style="color:var(--primary-cyan)">Teacher Admin</h4>
+                <div class="d-flex flex-column gap-2">
+                    <button class="ccc-v-tab-btn active" data-tab="students" onclick="switchCCCTab('students')">Students</button>
+                    <button class="ccc-v-tab-btn" data-tab="attendance" onclick="switchCCCTab('attendance')">Attendance</button>
+                    <button class="ccc-v-tab-btn" data-tab="timetable" onclick="switchCCCTab('timetable')">Timetable</button>
+                    <hr style="border-color:var(--glass-border)">
+                    <button class="btn-cyan w-100 mt-2" onclick="switchCCCView('login')">Logout</button>
                 </div>
-                <div class="mt-4 p-4 text-center glass-card">
-                    <i class="fas fa-tools fa-3x mb-3" style="color: var(--primary-gold);"></i>
-                    <p>Live database management is active. You can add students and mark attendance in the full version. This virtualized view demonstrates the ERP interface.</p>
-                </div>
-            </div>
+            </aside>
+            <main class="ccc-v-main" id="ccc-v-admin-content">
+                <!-- Content loaded via switchCCCTab -->
+            </main>
         </div>
     `;
+    switchCCCTab('students');
 }

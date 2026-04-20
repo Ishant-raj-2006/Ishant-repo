@@ -66,6 +66,21 @@ body {
 .ccc-v-badge.present { background: rgba(34, 197, 94, 0.2); color: #22c55e; }
 .ccc-v-badge.absent { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
 
+.ccc-v-tab-btn {
+    width: 100%;
+    padding: 12px 15px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    color: var(--text-dim);
+    text-align: left;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.ccc-v-tab-btn:hover { background: rgba(255,255,255,0.05); color: #fff; }
+.ccc-v-tab-btn.active { background: rgba(0, 242, 254, 0.1); color: var(--primary-cyan); border-color: rgba(0, 242, 254, 0.2); }
+
 @media (max-width: 992px) {
     .ccc-v-dashboard { grid-template-columns: 1fr; }
 }
