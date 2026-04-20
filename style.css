@@ -28,6 +28,50 @@ body {
     scroll-behavior: smooth;
 }
 
+/* --- PROJECT CREDENTIALS --- */
+.credential-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-left: 3px solid var(--primary-cyan);
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
+.credential-box code {
+    font-family: 'Space Grotesk', monospace;
+    color: var(--primary-cyan);
+    background: rgba(0, 242, 254, 0.1);
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+/* --- CCC VIRTUAL APP STYLES --- */
+.ccc-v-container { min-height: 400px; padding: 0 !important; overflow: hidden; position: relative; }
+.ccc-v-view { display: none; padding: 30px; animation: fadeIn 0.5s ease-out; }
+.ccc-v-view.active { display: block; }
+.ccc-v-login-card { max-width: 400px; margin: 50px auto; padding: 40px; background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: 25px; }
+.ccc-v-input { width: 100%; padding: 12px 18px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff; margin-bottom: 10px; }
+.ccc-v-input:focus { border-color: var(--primary-cyan); outline: none; background: rgba(255,255,255,0.08); }
+
+.ccc-v-dashboard { display: grid; grid-template-columns: 280px 1fr; gap: 25px; }
+.ccc-v-sidebar { background: rgba(255,255,255,0.03); border-radius: 20px; padding: 25px; border: 1px solid var(--glass-border); }
+.ccc-v-main { display: flex; flex-direction: column; gap: 25px; }
+.ccc-v-card { background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 20px; padding: 25px; }
+.ccc-v-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+.ccc-v-table th { text-align: left; padding: 12px; background: rgba(255,255,255,0.05); font-size: 0.8rem; text-transform: uppercase; color: var(--text-dim); }
+.ccc-v-table td { padding: 12px; border-bottom: 1px solid var(--glass-border); font-size: 0.9rem; }
+.ccc-v-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; }
+.ccc-v-badge.present { background: rgba(34, 197, 94, 0.2); color: #22c55e; }
+.ccc-v-badge.absent { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+
+@media (max-width: 992px) {
+    .ccc-v-dashboard { grid-template-columns: 1fr; }
+}
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
 /* --- UI COMPONENTS --- */
 .neon-glow {
     position: fixed;
