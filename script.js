@@ -327,7 +327,7 @@ function renderCCCDashboard(user) {
         <div class="ccc-v-dashboard">
             <aside class="ccc-v-sidebar">
                 <div class="text-center mb-4">
-                    <img src="coaching_center_logo_1775973304457.png" style="width: 80px; border-radius: 50%; border: 3px solid var(--primary-cyan); padding: 3px;">
+                    <img src="images/coaching_center_logo_1775973304457.png" style="width: 80px; border-radius: 50%; border: 3px solid var(--primary-cyan); padding: 3px;">
                     <h3 class="mt-3" style="font-size:1.1rem">${user.name}</h3>
                     <p class="text-dim">Class ${uClass}th</p>
                 </div>
