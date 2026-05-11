@@ -188,12 +188,17 @@ body {
 /* --- CERTIFICATE SECTION --- */
 .certificate-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 25px;
     margin-top: 40px;
+    align-items: start;
+    justify-items: stretch;
 }
 
 .certificate-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background: var(--bg-surface);
     border: 1px solid var(--glass-border);
     border-radius: 25px;
