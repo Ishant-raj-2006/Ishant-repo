@@ -308,6 +308,46 @@ body {
     text-decoration: none;
 }
 
+.btn-github {
+    background: #24292e;
+    color: #fff;
+    padding: 15px 40px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(36, 41, 46, 0.2);
+}
+
+.btn-github:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(36, 41, 46, 0.4);
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-leetcode {
+    background: #FFA116;
+    color: #000;
+    padding: 15px 40px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(255, 161, 22, 0.2);
+}
+
+.btn-leetcode:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(255, 161, 22, 0.4);
+    color: #000;
+    text-decoration: none;
+}
+
 .section-label {
     color: var(--primary-cyan); text-transform: uppercase; letter-spacing: 4px;
     font-size: 12px; font-weight: 700; display: block; margin-bottom: 15px;
