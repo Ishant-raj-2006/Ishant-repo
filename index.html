@@ -158,17 +158,42 @@
                                     </div>
                                 </div>
                             </div>
+                                <!-- Skill 7 -->
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="small font-weight-bold">Java Script</span>
+                                    <span class="small" style="color:var(--primary-cyan)">75%</span>
+                                </div>
+                                <div class="progress"
+                                    style="height: 6px; background: rgba(255,255,255,0.05); border-radius: 10px; overflow: visible;">
+                                    <div class="progress-bar"
+                                        style="width: 75%; background: var(--primary-cyan); border-radius: 10px; box-shadow: 0 0 10px var(--primary-cyan);">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="small font-weight-bold">github & Git </span>
+                                    <span class="small" style="color:var(--primary-cyan)">60%</span>
+                                </div>
+                                <div class="progress"
+                                    style="height: 6px; background: rgba(255,255,255,0.05); border-radius: 10px; overflow: visible;">
+                                    <div class="progress-bar"
+                                        style="width: 60%; background: var(--primary-cyan); border-radius: 10px; box-shadow: 0 0 10px var(--primary-cyan);">
+                                    </div>
+                                </div>
+                            </div>
 
                             <!-- Skill 4 -->
                             <div class="mb-3">
                                 <div class="d-flex justify-content-between mb-1">
                                     <span class="small font-weight-bold">PHP</span>
-                                    <span class="small" style="color:var(--primary-cyan)">30%</span>
+                                    <span class="small" style="color:var(--primary-cyan)">80%</span>
                                 </div>
                                 <div class="progress"
                                     style="height: 6px; background: rgba(255,255,255,0.05); border-radius: 10px; overflow: visible;">
                                     <div class="progress-bar"
-                                        style="width: 30%; background: var(--primary-cyan); border-radius: 10px; box-shadow: 0 0 10px var(--primary-cyan);">
+                                        style="width: 80%; background: var(--primary-cyan); border-radius: 10px; box-shadow: 0 0 10px var(--primary-cyan);">
                                     </div>
                                 </div>
                             </div>
@@ -889,123 +914,7 @@
         </section>
     </template>
 
-    <template id="template-ccc-management">
-        <div class="project-details">
-            <div class="project-header reveal">
-                <img src="images/proj_7.jpg" alt="CCC Banner" class="project-banner">
-                <h1 class="project-title" style="font-family: 'Outfit', sans-serif;">Champaran Coaching Management</h1>
-                <p class="project-subtitle">Complete Student & Teacher ERP Solution</p>
-            </div>
 
-            <div id="ccc-app-root" class="ccc-v-container glass-card mt-4">
-                <!-- Virtual App Router Content -->
-                <div id="ccc-v-view-login" class="ccc-v-view active">
-                    <div class="ccc-v-login-card">
-                        <div class="text-center mb-4">
-                            <img src="images/coaching_center_logo_1775973304457.png" alt="CCC Logo"
-                                style="width: 80px; border-radius: 15px;">
-                            <h2 class="mt-3">Student Login</h2>
-                            <p class="text-dim">Use your Email and Phone Number to sign in</p>
-                        </div>
-                        <form id="ccc-v-login-form">
-                            <div class="form-group mb-3 text-left">
-                                <label>Student Email</label>
-                                <input type="email" id="ccc-v-email" class="ccc-v-input" placeholder="example@gmail.com"
-                                    required>
-                            </div>
-                            <div class="form-group mb-4 text-left">
-                                <label>Password (Phone)</label>
-                                <input type="password" id="ccc-v-pass" class="ccc-v-input"
-                                    placeholder="Enter 10-digit number" required>
-                            </div>
-                            <button type="submit" class="btn-cyan w-100">Login to Dashboard</button>
-                        </form>
-                        <div class="mt-4 text-center">
-                            Admin/Teacher? <a href="#" onclick="switchCCCView('admin-login')"
-                                class="text-highlight">Teacher Portal</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="ccc-v-view-admin-login" class="ccc-v-view">
-                    <div class="ccc-v-login-card">
-                        <div class="text-center mb-4">
-                            <i class="fas fa-user-shield mb-3" style="font-size: 3rem; color: var(--primary-cyan);"></i>
-                            <h2>Teacher Access</h2>
-                            <p class="text-dim">Authorized Personnel Only</p>
-                        </div>
-                        <form id="ccc-v-admin-login-form">
-                            <div class="form-group mb-3 text-left">
-                                <label>Staff Username</label>
-                                <input type="text" id="ccc-v-admin-user" class="ccc-v-input"
-                                    placeholder="Enter Username" required>
-                            </div>
-                            <div class="form-group mb-4 text-left">
-                                <label>Secret Password</label>
-                                <input type="password" id="ccc-v-admin-pass" class="ccc-v-input" placeholder="••••••••"
-                                    required>
-                            </div>
-                            <button type="submit" class="btn-cyan w-100">Secure Login</button>
-                        </form>
-                        <div class="mt-4 text-center">
-                            Student? <a href="#" onclick="switchCCCView('login')" class="text-highlight">Back to Student
-                                Login</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dashboard view will be injected/shown based on login -->
-                <div id="ccc-v-view-dashboard" class="ccc-v-view">
-                    <!-- Dashboard HTML injected here for brevity in template, or kept static -->
-                    <div class="dashboard-loading text-center p-5">
-                        <i class="fas fa-spinner fa-spin fa-3x"></i>
-                        <p class="mt-3">Loading Dashboard...</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-grid mt-5">
-                <div class="project-info reveal">
-                    <h3>Project Overview</h3>
-                    <p>A specialized management system for coaching centers featuring real-time data synchronization
-                        with Firebase. This integrated version runs directly within the portfolio as a virtualized ERP
-                        solution.</p>
-
-                    <div class="tech-stack">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">JavaScript ES6</span>
-                        <span class="tech-tag">Firebase Realtime DB</span>
-                    </div>
-                </div>
-
-                <div class="project-features reveal">
-                    <h3>Key Features</h3>
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check-circle"></i> Virtualized App-in-App Experience</li>
-                        <li><i class="fas fa-check-circle"></i> Real-time Attendance & Fee Tracking</li>
-                        <li><i class="fas fa-check-circle"></i> Teacher/Admin Management Panel</li>
-                        <li><i class="fas fa-check-circle"></i> Automatic Data Synchronization</li>
-                    </ul>
-                </div>
-
-                <div class="project-credentials reveal" style="margin-top: 30px;">
-                    <h3>Demo Credentials</h3>
-                    <div class="credential-box">
-                        <div class="cred-item">
-                            <strong style="color: var(--primary-cyan);">Teacher Admin:</strong><br>
-                            ID: <code>Ishant_raj_2006</code> &nbsp; | &nbsp; Pass: <code>Hello123</code>
-                        </div>
-                        <div class="cred-item"
-                            style="margin-top: 15px; border-top: 1px solid var(--glass-border); padding-top: 15px;">
-                            <strong style="color: var(--primary-gold);">Student Dashboard:</strong><br>
-                            ID: <code>demo@student.com</code> &nbsp; | &nbsp; Pass: <code>1234567890</code>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </template>
 
     <!-- Library Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
